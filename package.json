@@ -1,0 +1,15 @@
+{
+  "name": "certd-script",
+  "version": "1.0.0",
+  "description": "用于此项目\r [certd/certd: 开源 SSL 证书管理工具；全自动证书申请、更新、续期；通配符证书，泛域名证书申请；证书自动化部署到阿里云、腾讯云、主机、群晖、宝塔；https 证书，pfx 证书，der 证书，TLS 证书，nginx 证书自动续签自动部署](https://github.com/certd/certd)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.8.4"
+  }
+}
