@@ -12,6 +12,10 @@ const axios = ctx.http
 const result = []
 const reqCert = ctx.pipeline.stages.find(stage => stage.title === '证书申请阶段')?.tasks?.[0]
 const reqCertResult = reqCert?.status?.result
+const reader = new ctx.CertReader(ctx.self.cert)
+const expires = reader.expires
+/** @type {{commonName:string,altNames:string[]}} */
+const domains = reader.detail.domains
 
 if (reqCert) {
   result.push({
@@ -52,8 +56,10 @@ await axios({
   data: {
     group_id: GROUP_ID,
     message: `证书申请结果
+${domains.altNames.join('|')}
+距离到期: ${Math.floor((expires - new Date()) / 1000 / 60 / 60 / 24)}天
 =============
-${result.map(item => `${item.title}: ${item.result}${item.expires ? `\n距离到期: ${Math.floor((item.expires - new Date()) / 1000 / 60 / 60 / 24)}天` : ''}`).join('\n\n')}`
+${result.map(item => `${item.title}: ${item.result}`).join('\n\n')}`
   }
 }).then(e => {
   ctx.logger.info('status', e.status)
