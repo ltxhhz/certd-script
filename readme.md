@@ -8,4 +8,5 @@
 | 脚本列表                                         | 说明                                                                                                                                     |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [上传证书到 1panel](./js/upload-to-1panel.js)       | 没有apiKey的旧版1panel使用[v1](https://github.com/ltxhhz/certd-script/blob/6e49a345604acc583a135de920fb7cbf6d40f6ce/js/upload-to-1panel.js) |
-| [更换1panel最新证书](./js/update-website-1panel.js) |                                                                                                                                          |
+| [更换1panel最新证书](./js/update-website-1panel.js) | 将1panel中指定网站的证书更新为最新上传的证书 |
+| [发送OneBot群消息](./js/send-onebot-group-msg.js) | 通过OneBot协议向群组发送证书申请结果通知 |
